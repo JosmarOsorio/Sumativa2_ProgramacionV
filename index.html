@@ -1,0 +1,176 @@
+<!--Desarrollado Por: JOSMAR OSORIO y STEPHANIA SALMERÓN. Para: Programación V-UBA Prof. Elizabeth del Valle-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas </title>
+    <link rel="icon" href="img/iconos/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="#"><img src="img/iconos/logo.png" alt="logo"></a>
+        </div>
+        <nav>
+            <div class="icon-bar" onclick="Show()">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <!--Creamos el menu de navegacion de la pagina-->
+            <ul id="nav-lists">
+                <li class="close"><span onclick="Hide()"></span></li>
+                <li><a href="#Peliculas">Peliculas Recomendadas</a></li>
+                <li><a href="#Frases">Frases</a></li>
+                <li><a href="#Informacion">Información</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main >
+        <!--Creamos la sección de Películas reocmendadas-->
+        <div class="content">
+            <article id="Peliculas" class="Peliculas">
+                <div class="peliculas-recomendadas"> 
+                        <h2>Películas Recomendadas</h2>
+
+                    <div class="contenedor-principal"> <!--Con el link de Fontawesome creamos un botón-->
+                        <button role="button" id="flecha-izquierda" class="flecha-izquierda"><!--Creamos un elemento botón con id y la clase "flecha-izquierda" esto definirá estilos y comportamientos al botón-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg> <!--La etiqueta <svg> define el icono del botón--></button>
+
+                        <div class="contenedor-carrusel">
+                            <div class="carrusel"> 
+                                <div class="pelicula"> <!--Este div crea elementos individuales "pelicula" dentro de la clase carrusel-->
+                                    <a href="#"><img src="img/Posters/Alicia en el pais de las Maravillas.jpg " alt="Poster de Alicia"></a> <!--La etiqueta <img> crea un elemento de imagen de la carpeta img ya creada-->
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/Avengers Endgame.jpg" alt="Poster de Avengers"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/El padrino.jpg" alt="Poster de El padrino"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/El rey Leon.jpg" alt="Poster de El rey leon"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/El show de Truman.jpg" alt="Poster de El show de Truman"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/Harry Potter.jpg" alt="Poster de Harry Potter"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/Star Wars.jpg" alt="Poster de Star Wars"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/Terminator 2.jpg" alt="Poster de Terminator 2"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/Titanic.jpg" alt="Poster de Titanic"></a>
+                                </div>
+                                <div class="pelicula">
+                                    <a href="#"><img src="img/Posters/Toy story.jpg" alt="Poster de Toy Story"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <button role="button" id="flecha-derecha" class="flecha-derecha"> <!--Creamos un elemento botón con id y la clase "flecha-derecha" esto definirá estilos y comportamientos al botón-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg> <!--La etiqueta <svg> define el icono del botón-->
+                        </button>
+                    </div>
+                </div>     
+            </article>
+
+            <!--Creamos la seccion de frases celebres-->
+            <article id="Frases" class="overview anchor">
+                <div class="title">
+                    <h2>Frases celebres de peliculas</h2>
+                </div>
+                <!--Creamos un div que contendra la imagen y la frase correspondiente d ela pelicula-->
+                <div id="fraseCelebre">
+                    <img id="imagenPelicula" src="" alt="Imagen de pelicula">
+                    <p id = "frase"></p>
+                </div>
+            </article>
+
+            <!--Creamos la seccion de contacto e informacion-->
+            <article class="contact anchor" id="Informacion">
+                <div class="title">
+                    <h2>Información</h2>
+                </div>
+                <div class="group">
+                  <section class="contact-form">
+                    <!--Creamos el formulario de contactos o de comentarios-->
+                    <form id="Formulario">
+                        <input type="text" class="feedback-input" placeholder="Nombre" id="nombre" required/>
+                        <input type="email" class="feedback-input" placeholder="Email" id="email" required/>
+                        <input type="number" class="feedback-input" placeholder="Teléfono" id="telefono" required/>
+                        <input type="text" class="feedback-input" placeholder="Dirección" id="direccion" required/>
+                        <textarea class="feedback-input" placeholder="Comentario" id="comentario" required></textarea>
+                        <input type="button" value="Enviar" onclick="validarFormulario()"/>
+                    </form>
+                    
+                  </section>
+                  <!--Creamos un aprtado de informacion de tarifas-->
+                  <aside>
+                    <article class="profile">
+                      <header>
+                        <h2>Tarifas de subscripciones</h2>
+                      </header>
+                      <section>
+                        <h3>Subscripcion de 1 mes 1.99$</h3>
+                        <p>Conversion a bolivares segun la tasa</p>
+                        <!--Creamos una tabla donde se agregaran los precios de las tarifas al cambio usando una api-->
+                        <table>
+                          <tr>
+                            <th></th>
+                            <td></td>
+                          </tr>
+                        </table>
+                      </section>
+                    </article>
+                  </aside>
+          
+                </div>  
+            </article>    
+        </div>    
+    </main> 
+    <!--Creamos el footer de la pagina-->  
+    <footer>
+        <!--Parte izquierda del footer-->
+        <div id="left-footer"><!--Creamos un menu de navegacion simple para navegar desde el footer-->
+            <h3>Atajos</h3>
+            <ul class="atajos">
+                <li><a href="#Peliculas">Peliculas Recomendadas</a></li>
+                <li><a href="#Frases">Frases</a></li>
+                <li><a href="#Informacion">Información</a></li>
+            </ul>
+        </div>
+        <!--Creamos la parte derecha del footer-->
+        <div id="right-footer"><!--Creamos un menu para compartir las redes sociales-->
+            <h3>Sígenos en</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/?locale=es_LA" target="_blank">
+                            <img class="icono" src="img/iconos/facebook.png" alt="icono facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com" target="_blank">
+                            <img class="icono" src="img/iconos/instragram.png" alt="icono instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.whatsapp.com/?lang=es_LA" target="_blank">
+                            <img class="icono" src="img/iconos/whatsapp.png" alt="icono whatsapp">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sitio web desarrollado por Josmar Osorio y Stephania Salmerón</p>
+        </div>
+    </footer>
+    <script src="codigo.js"></script> <!--Conectamos el html al archivo javacript-->   
+</body>
+</html>
